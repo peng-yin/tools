@@ -1,0 +1,30 @@
+{
+  "name": "tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "a tools by typescript",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "workspaces": [
+    "src/*"
+  ],
+  "scripts": {
+    "start": "tsc --declarationDir lib && tsc --declarationDir es"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "package.json"
+  ],
+  "peerDependencies": {
+    "lodash": "^1.0.0",
+    "react": "^16.8.6"
+  }
+}

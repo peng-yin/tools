@@ -1,0 +1,33 @@
+
+{
+  "compilerOptions": {
+      "strict": true,
+      "target": "esnext",
+      "module": "esnext",
+      "baseUrl": ".",
+      "moduleResolution": "node",
+      "jsx": "react-jsx",
+      "removeComments": true,
+      "esModuleInterop": true,
+      "sourceMap": true,
+      "importHelpers": true,
+      "allowSyntheticDefaultImports": true,
+      "skipLibCheck": true,
+      "declaration": true,
+      "emitDeclarationOnly": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "es",
+    "dist",
+    "typings",
+    "**/__test__",
+    "test",
+    "docs",
+    "tests"
+  ]
+}

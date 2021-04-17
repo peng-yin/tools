@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "a tools by typescript",
   "keywords": [],
-  "author": "",
+  "author": "yinpeng",
   "license": "ISC",
   "homepage": "",
   "repository": {
@@ -14,6 +14,9 @@
   "workspaces": [
     "src/*"
   ],
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "start": "tsc --declarationDir lib && tsc --declarationDir es"
   },

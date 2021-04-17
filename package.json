@@ -26,6 +26,9 @@
     "es",
     "package.json"
   ],
+  "dependencies": {
+    "typescript": "^4.1.2"
+  },
   "peerDependencies": {
     "lodash": "^1.0.0",
     "react": "^16.8.6"

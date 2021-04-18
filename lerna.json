@@ -5,10 +5,11 @@
   "command": {
     "publish": {
       "message": "chore:Publish-%v",
-      "registry": "https://registry.npmjs.org/"
+      "registry": "https://registry.yarnpkg.com/"
     }
   },
-  "npmClient": "npm",
+  "useWorkspaces": true,
+  "npmClient": "yarn",
   "version": "independent",
   "lerna": "4.0.0"
 }

@@ -21,9 +21,11 @@
     "url": "git+https://github.com/peng-yin/tools.git"
   },
   "scripts": {
+    "build": "tsc --declarationDir lib && tsc --declarationDir es",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/peng-yin/tools/issues"
-  }
+  },
+  "gitHead": "90795823860ea2eef290e31420f456df26a05cbc"
 }

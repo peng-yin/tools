@@ -16,9 +16,6 @@
     "es",
     "package.json"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/peng-yin/tools.git"

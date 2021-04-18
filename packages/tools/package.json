@@ -2,7 +2,6 @@
   "name": "@ts/tools",
   "version": "1.0.7",
   "description": "> TODO: description",
-  "author": "yinpeng08 <yinpeng08@meituan.com>",
   "homepage": "https://github.com/peng-yin/tools#readme",
   "license": "ISC",
   "main": "./lib/index.js",
@@ -32,5 +31,5 @@
   "bugs": {
     "url": "https://github.com/peng-yin/tools/issues"
   },
-  "gitHead": "23dcc10aa10cb67c1d57626d3fdf0ee9782bc8a0"
+  "gitHead": "4e2527b50c5515b08b762a4ee17b0e12e71907a7"
 }

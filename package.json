@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "tools",
   "version": "1.0.0",
   "description": "a tools by typescript",
@@ -13,10 +14,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.yarnpkg.com/"
-  },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "test": "lerna run test",

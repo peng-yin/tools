@@ -1,0 +1,29 @@
+{
+  "name": "@pengyin/ts-hooks",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "yinpeng08 <yinpeng08@meituan.com>",
+  "homepage": "https://github.com/peng-yin/tools#readme",
+  "license": "ISC",
+  "main": "lib/ts-hooks.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peng-yin/tools.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/peng-yin/tools/issues"
+  }
+}

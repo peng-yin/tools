@@ -1,0 +1,35 @@
+{
+  "name": "@ts/tools",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "yinpeng08 <yinpeng08@meituan.com>",
+  "homepage": "https://github.com/peng-yin/tools#readme",
+  "license": "ISC",
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./lib/index.d.ts",
+  "directories": {
+    "tools": "tools",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "package.json"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peng-yin/tools.git"
+  },
+  "scripts": {
+    "build": "tsc --declarationDir lib && tsc --declarationDir es",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/peng-yin/tools/issues"
+  }
+}

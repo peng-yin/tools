@@ -1,6 +1,6 @@
 {
-  "name": "@tsfe/tools",
-  "version": "1.0.18",
+  "name": "ts-tools",
+  "version": "1.0.17",
   "description": "> TODO: description",
   "homepage": "https://github.com/peng-yin/tools#readme",
   "license": "ISC",

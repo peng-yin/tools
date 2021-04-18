@@ -2,7 +2,7 @@
   "name": "@pengyin/ts-hooks",
   "version": "1.0.1",
   "description": "> TODO: description",
-  "author": "yinpeng08 <yinpeng08@meituan.com>",
+  "author": "yinpeng",
   "homepage": "https://github.com/peng-yin/tools#readme",
   "license": "ISC",
   "main": "lib/ts-hooks.js",

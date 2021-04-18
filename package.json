@@ -19,7 +19,6 @@
   "types": "./lib/index.d.ts",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "tsc --declarationDir lib && tsc --declarationDir es",
     "test": "lerna run test",
     "clean": "rimraf packages/**/lib"
   },

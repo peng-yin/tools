@@ -2,14 +2,13 @@
   "packages": [
     "packages/*"
   ],
-  "useWorkspaces": true,
   "command": {
     "publish": {
       "message": "chore:Publish-%v",
-      "registry": "https://registry.yarnpkg.com/"
+      "registry": "https://registry.npmjs.org/"
     }
   },
-  "npmClient": "yarn",
+  "npmClient": "npm",
   "version": "independent",
   "lerna": "4.0.0"
 }

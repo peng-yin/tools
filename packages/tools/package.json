@@ -17,8 +17,7 @@
     "package.json"
   ],
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.yarnpkg.com/"
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -31,5 +30,5 @@
   "bugs": {
     "url": "https://github.com/peng-yin/tools/issues"
   },
-  "gitHead": "4e2527b50c5515b08b762a4ee17b0e12e71907a7"
+  "gitHead": "40a878d5f50e70e659a2add7b282cda05efa1ab3"
 }

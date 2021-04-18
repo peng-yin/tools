@@ -3,6 +3,12 @@
     "packages/*"
   ],
   "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "message": "chore:Publish-%v",
+      "registry": "https://registry.npmjs.org/"
+    }
+  },
   "npmClient": "yarn",
   "version": "independent",
   "lerna": "4.0.0"

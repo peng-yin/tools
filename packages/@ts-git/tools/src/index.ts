@@ -70,6 +70,7 @@ export const copy = <T>(arg: T): T => {
       if (errorExt) {
         Object.assign(err, errorExt);
       }
+      console.log(12);
       return [err, undefined];
     });
 }

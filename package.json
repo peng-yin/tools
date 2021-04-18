@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "tools",
   "version": "1.0.0",
   "description": "a tools by typescript",

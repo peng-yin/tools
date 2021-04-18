@@ -6,7 +6,6 @@
       "module": "esnext",
       "baseUrl": ".",
       "moduleResolution": "node",
-      "jsx": "react-jsx",
       "removeComments": true,
       "esModuleInterop": true,
       "sourceMap": true,

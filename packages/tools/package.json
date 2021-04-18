@@ -1,5 +1,5 @@
 {
-  "name": "@ts/tools",
+  "name": "@ts-git/tools",
   "version": "1.0.13",
   "description": "> TODO: description",
   "homepage": "https://github.com/peng-yin/tools#readme",
@@ -27,5 +27,5 @@
   "bugs": {
     "url": "https://github.com/peng-yin/tools/issues"
   },
-  "gitHead": "44e7c94184e3018f6f0e5315ac79b96e7ad4d266"
+  "gitHead": "84bc8176ae1c14ad26ff7a76b9c365bc2f073ba8"
 }

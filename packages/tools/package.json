@@ -19,6 +19,7 @@
     "package.json"
   ],
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.yarnpkg.com/"
   },
   "repository": {

@@ -1,5 +1,5 @@
 {
-  "name": "@ts-fe/tools",
+  "name": "@tsfe/tools",
   "version": "1.0.23",
   "description": "> TODO: description",
   "homepage": "https://github.com/peng-yin/tools#readme",
@@ -27,5 +27,5 @@
   "bugs": {
     "url": "https://github.com/peng-yin/tools/issues"
   },
-  "gitHead": "dfaba49e22532dc2ad8b6ae51ea07b38ab55cc08"
+  "gitHead": "340cc0d4b15d6b3b571b7058e22c2c1f5dd6dfe0"
 }

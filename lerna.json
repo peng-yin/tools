@@ -1,15 +1,8 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "command": {
-    "publish": {
-      "message": "chore:Publish-%v",
-      "registry": "https://registry.yarnpkg.com/"
-    }
-  },
   "useWorkspaces": true,
   "npmClient": "yarn",
   "version": "independent",
-  "lerna": "4.0.0"
+  "packages": [
+    "packages/*"
+  ]
 }

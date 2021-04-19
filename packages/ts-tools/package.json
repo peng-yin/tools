@@ -4,24 +4,20 @@
   "description": "> TODO: description",
   "homepage": "https://github.com/peng-yin/tools#readme",
   "license": "ISC",
-  "main": "./lib/index.js",
-  "module": "./es/index.js",
-  "types": "./lib/index.d.ts",
-  "directories": {
-    "tools": "tools",
-    "test": "__tests__"
-  },
+  "main": "dist/index",
+  "types": "dist/index",
   "files": [
-    "lib",
-    "es",
-    "package.json"
+    "dist"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/peng-yin/tools.git"
   },
   "scripts": {
-    "build": "tsc --declarationDir lib && tsc --declarationDir es",
+    "build": "yarn run clean && yarn run compile",
+    "compile": "tsc -p tsconfig.build.json",
+    "clean": "rimraf -rf ./dist",
+    "prepublishOnly": "yarn run build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {

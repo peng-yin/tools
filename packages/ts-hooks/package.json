@@ -5,13 +5,10 @@
   "author": "yinpeng",
   "homepage": "https://github.com/peng-yin/tools#readme",
   "license": "ISC",
-  "main": "lib/ts-hooks.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
+  "main": "dist/index",
+  "types": "dist/index",
   "files": [
-    "lib"
+    "dist"
   ],
   "publishConfig": {
     "registry": "https://registry.yarnpkg.com/"
@@ -21,6 +18,10 @@
     "url": "git+https://github.com/peng-yin/tools.git"
   },
   "scripts": {
+    "build": "yarn run clean && yarn run compile",
+    "clean": "rimraf -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "yarn run build",
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {

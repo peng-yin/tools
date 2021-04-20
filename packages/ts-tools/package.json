@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "yarn run clean && yarn run compile",
-    "compile": "tsc -p tsconfig.build.json",
+    "compile": "tsc -p tsconfig.json",
     "clean": "rimraf -rf ./dist",
     "prepublishOnly": "yarn run build",
     "test": "echo \"Error: run tests from root\" && exit 1"

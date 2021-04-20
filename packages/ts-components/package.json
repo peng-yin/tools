@@ -11,6 +11,7 @@
     "test": "yarn run build"
   },
   "peerDependencies": {
+    "antd": "^4.12.1",
     "react": "~17.0.0"
   }
 }

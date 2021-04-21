@@ -1,12 +1,21 @@
 {
-  "extends": "../../tsconfig.json",
-
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "./dist"
+    "baseUrl": ".",
+    "paths": {
+      "@": ["src/*"]
+    },
+    "sourceMap": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "target": "es3",
+    "lib": ["es6", "dom"],
+    "declaration": false,
+    "removeComments": true
   },
-
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "dist/**/*",
+    "__test__/**/*"
   ]
 }

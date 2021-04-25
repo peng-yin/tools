@@ -1,5 +1,5 @@
 {
-  "name": "@pengyin/ts-components",
+  "name": "@pengyin/components",
   "version": "1.0.3",
   "main": "dist/index",
   "types": "dist/index",

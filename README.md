@@ -5,6 +5,7 @@
 * 本地正常编译
 * 发布npm
 * 📦导出类型es, cmd..., rollup 合理配置各种形式的打包编辑
+* tsx 参考nxb, hooks 拿ahooks
 * tsconfig的合理配置
 * eslint prettiter hooky
 * dumi 制作文档
@@ -14,10 +15,7 @@
 
 * [ts-monorepo](https://github.com/NiGhTTraX/ts-monorepo)
 
-* [monorepo-utils](https://github.com/azu/monorepo-utils)
-
-* [lerna-typescript-cra-uilib-starter
-](https://github.com/shnydercom/lerna-typescript-cra-uilib-starter)
+* [lerna-typescript-cra-uilib-starter](https://github.com/shnydercom/lerna-typescript-cra-uilib-starter)
 
 ```ts
   interface ServerResponse {

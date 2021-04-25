@@ -1,5 +1,5 @@
 {
-  "name": "@pengyin/ts-tools",
+  "name": "@pengyin/ie",
   "version": "1.1.7",
   "main": "dist/main.esm.min.js",
   "license": "MIT",
@@ -19,7 +19,9 @@
     "url": "git+https://github.com/peng-yin/tools.git"
   },
   "scripts": {
-    "build": "rollup --config rollup.config.js",
+    "build": "yarn run clean && yarn run compile",
+    "clean": "rimraf -rf ./dist",
+    "compile": "rollup --config rollup.config.js",
     "test": "jest"
   },
   "devDependencies": {

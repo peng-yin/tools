@@ -81,3 +81,10 @@ lerna publish xx
 // 根据commit提交信息自动生成package版本
 lerna version --conventional-commits
 ```
+
+
+
+
+[antv-g2-transform](https://g2.antv.vision/zh/docs/manual/dataset/transform)
+
+[antvis/util](https://github.com/antvis/util)

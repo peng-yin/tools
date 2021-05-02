@@ -21,7 +21,7 @@ class Ie {
    * @front {number} 判断的版本
    * @after {number} 可选参数，如果存在则判断范围
    */
-  public is(front: number, after?: number): boolean {    
+  public is(front: number, after?: number): boolean {
     this.Error(front);
     if (after === undefined) {
       return front == 11 ? this.ie11() : this.range(front);

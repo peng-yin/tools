@@ -1,13 +1,13 @@
 {
-  "name": "ie-judgement",
+  "name": "tools",
   "version": "1.1.4",
   "main": "dist/main.esm.min.js",
   "license": "MIT",
   "author": "boses",
-  "description": "判断ie版本",
+  "description": "工具库",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bosens-China/ie-judgement"
+    "url": "https://github.com/peng-yin/tools"
   },
   "types": "src/main.d.ts",
   "keywords": [

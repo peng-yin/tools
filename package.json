@@ -1,44 +1,40 @@
 {
-  "private": true,
-  "name": "tools",
-  "version": "1.0.0",
-  "description": "a tools by typescript",
-  "keywords": [],
-  "author": "yinpeng",
+  "name": "ie-judgement",
+  "version": "1.1.4",
+  "main": "dist/main.esm.min.js",
   "license": "MIT",
-  "homepage": "",
+  "author": "boses",
+  "description": "判断ie版本",
   "repository": {
     "type": "git",
-    "url": "https://github.com/peng-yin/tools.git"
+    "url": "https://github.com/bosens-China/ie-judgement"
   },
-  "workspaces": [
-    "packages/*"
+  "types": "src/main.d.ts",
+  "keywords": [
+    "ie",
+    "javascript",
+    "ts"
   ],
   "scripts": {
-    "start": "lerna bootstrap",
-    "build": "lerna run build",
-    "pub": "lerna publish",
-    "clean": "lerna run clean",
-    "clean:pkg": "lerna clean",
-    "test": "lerna run test"
+    "build": "rollup --config rollup.config.js",
+    "test": "jest"
   },
-  "files": [
-    "dist",
-    "lib",
-    "es",
-    "package.json"
-  ],
-  "peerDependencies": {
-    "lodash": "^1.0.0",
-    "react": "^16.8.6"
-  },
-  "dependencies": {},
   "devDependencies": {
-    "@types/node": "^14.14.41",
-    "@types/react": "^17.0.3",
-    "lerna": "^4.0.0",
-    "react": "^17.0.2",
-    "rimraf": "^3.0.2",
-    "typescript": "^4.2.4"
+    "@types/jest": "^24.0.18",
+    "@types/jsdom": "^12.2.4",
+    "jest": "^24.9.0",
+    "jsdom": "^15.1.1",
+    "rollup-plugin-delete": "^1.1.0",
+    "rollup-plugin-filesize": "^6.2.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "rollup-plugin-typescript2": "^0.24.1",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
+    "eslint": "^6.3.0",
+    "eslint-config-alloy": "^3.0.0",
+    "rollup": "^1.21.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.3",
+    "ts-jest": "^24.1.0"
   }
 }

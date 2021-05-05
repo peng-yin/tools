@@ -1,17 +1,15 @@
 {
-  "name": "tools",
+  "name": "@pengyin/tools",
   "version": "1.0.0",
   "author": "yinpeng <674891229@qq.com>",
   "description": "Tool library based on typscript",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf lib dist es types",
-    "format": "prettier --write \"{src,test}/**/*.{js,ts}\" \"**/*.md\"",
-    "format:check": "prettier --list-different \"{src,test}/**/*.{js,ts}\" \"**/*.md\"",
-    "lint": "eslint --ext js,ts src test",
+    "format": "prettier --write \"{src}/**/*.{ts}\"",
+    "lint": "eslint --ext ts src",
     "build": "npm run clean && rollup -c",
-    "check-types": "tsc --noEmit",
-    "prepublishOnly": "npm run clean && npm run check-types && npm run format:check && npm run lint"
+    "check-types": "tsc --noEmit"
   },
   "keywords": [
     "typescript",
@@ -33,7 +31,8 @@
   "repository": "https://github.com/peng-yin/tools",
   "bugs": "https://github.com/peng-yin/tools/issues",
   "dependencies": {
-    "@babel/runtime": "^7.14.0"
+    "@babel/runtime": "^7.14.0",
+    "redux": "^4.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",

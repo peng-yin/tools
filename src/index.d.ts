@@ -1,7 +1,6 @@
-declare global {
-  interface Window {
-    ActiveXObject: any;
-  }
+declare interface Window {
+  window: any
 }
 
-export default ie;
+type Dictionary<T> = { [key: string]: T }
+

@@ -61,7 +61,7 @@ export default [
   {
     // inputFiles output: { file: dir: 'xx' }
     input: 'src/index.ts',
-    output: { file: pkg.main, format: 'cjs', indent: false },
+    output: { file: pkg.main, format: 'cjs', exports: 'named', indent: false },
     external,
     plugins: [
       nodeResolve({
@@ -111,6 +111,7 @@ export default [
       format: 'umd',
       name: 'main',
       globals,
+      exports: 'named',
       indent: false
     },
     external: Object.keys(globals),
@@ -141,6 +142,7 @@ export default [
       format: 'umd',
       name: 'main',
       globals,
+      exports: 'named',
       indent: false
     },
     external: Object.keys(globals),

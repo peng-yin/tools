@@ -1,51 +1,174 @@
-import typescript from "rollup-plugin-typescript2";
+import fs  from 'fs'
+// import path  from 'path'
+import nodeResolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel'
+import replace from '@rollup/plugin-replace'
+import typescript from 'rollup-plugin-typescript2'
 import filesize from 'rollup-plugin-filesize';
-// 清理文件夹
-import del from "rollup-plugin-delete";
-// 压缩
-import {
-  terser
-} from "rollup-plugin-terser";
+import { terser } from 'rollup-plugin-terser'
 
-// import { version } from './package.json';
+import pkg from './package.json'
 
-export default {
-  input: "./src/main.ts",
-  plugins: [
-    del({
-      targets: "dist/*"
-    }),
-    typescript({
-      clean: true
-    }),
-    terser({
-      sourcemap: true,
-      include: [/^.+\.min\.js$/],
-    }),
-    filesize()
-  ],
-  output: [{
-    //file: "dist/main.{version}.min.js",
-    file: "dist/main.min.js",
-    format: "umd",
-    name: "Ie",
-    sourcemap: true,
-  },
+const srcFiles = fs.readdirSync('./src/');
+// const projectDir = path.resolve(process.cwd(), 'src');
+
+if (!srcFiles) {
+    throw new Error('src目录为空');
+}
+
+/**
+ * code-splitting
+ */
+
+// const inputFiles = srcFiles.map(dir => path.resolve(projectDir, dir));
+
+// if (Array.isArray(srcFiles)) {
+//   const isTsFile = srcFiles.every(dirName => /.+\.ts/.test(dirName));
+//   if (!isTsFile) {
+//     throw new Error('src目录文件必须为ts');
+//   }
+// }
+
+const globals = {
+  'lodash/chunk': 'lodash'
+}
+
+const extensions = ['.js','.jsx','.ts','.tsx']
+
+const noDeclarationFiles = { compilerOptions: { declaration: false } }
+
+const babelRuntimeVersion = pkg.dependencies['@babel/runtime'].replace(
+  /^[^0-9]*/,
+  ''
+)
+
+const makeExternalPredicate = externalArr => {
+  if (externalArr.length === 0) {
+    return () => false
+  }
+  const pattern = new RegExp(`^(${externalArr.join('|')})($|/)`)
+  return id => pattern.test(id)
+}
+
+const external = makeExternalPredicate([
+  ...Object.keys(pkg.dependencies || {}),
+  ...Object.keys(pkg.peerDependencies || {})
+])
+
+export default [
+  // CommonJS
   {
-    file: "dist/main.esm.min.js",
-    format: "es",
-    sourcemap: true,
+    // inputFiles output: { file: dir: 'xx' }
+    input: 'src/index.ts',
+    output: { file: pkg.main, format: 'cjs', indent: false },
+    external,
+    plugins: [
+      nodeResolve({
+        extensions
+      }),
+      typescript({ useTsconfigDeclarationDir: true }),
+      babel({
+        extensions,
+        plugins: [
+          ['@babel/plugin-transform-runtime', { version: babelRuntimeVersion }],
+        ],
+        babelHelpers: 'runtime'
+      }),
+      filesize()
+    ]
   },
+
+  // ES
   {
-    file: "dist/main.js",
-    format: "umd",
-    name: "Ie",
-    sourcemap: true,
+    input: 'src/index.ts',
+    output: { file: pkg.module, format: 'es', indent: false },
+    external,
+    plugins: [
+      nodeResolve({
+        extensions
+      }),
+      typescript({ tsconfigOverride: noDeclarationFiles }),
+      babel({
+        extensions,
+        plugins: [
+          [
+            '@babel/plugin-transform-runtime',
+            { version: babelRuntimeVersion, useESModules: true }
+          ],
+        ],
+        babelHelpers: 'runtime'
+      }),
+      filesize()
+    ]
   },
+
+  // UMD Development
   {
-    file: "dist/main.esm.js",
-    format: "es",
-    sourcemap: true,
+    input: 'src/index.ts',
+    output: {
+      file: 'dist/main.js',
+      format: 'umd',
+      name: 'main',
+      globals,
+      indent: false
+    },
+    external: Object.keys(globals),
+    plugins: [
+      nodeResolve({
+        extensions
+      }),
+      commonjs(),
+      typescript({ tsconfigOverride: noDeclarationFiles }),
+      babel({
+        extensions,
+        exclude: 'node_modules/**',
+        babelHelpers: 'bundled',
+      }),
+      replace({
+        preventAssignment: true,
+        'process.env.NODE_ENV': JSON.stringify('development')
+      }),
+      filesize()
+    ]
   },
-  ]
-};
+
+  // UMD Production
+  {
+    input: 'src/index.ts',
+    output: {
+      file: 'dist/main.min.js',
+      format: 'umd',
+      name: 'main',
+      globals,
+      indent: false
+    },
+    external: Object.keys(globals),
+    plugins: [
+      nodeResolve({
+        extensions
+      }),
+      commonjs(),
+      typescript({ tsconfigOverride: noDeclarationFiles }),
+      babel({
+        extensions,
+        exclude: 'node_modules/**',
+        babelHelpers: 'bundled',
+        skipPreflightCheck: true
+      }),
+      replace({
+        preventAssignment: true,
+        'process.env.NODE_ENV': JSON.stringify('production')
+      }),
+      terser({
+        compress: {
+          pure_getters: true,
+          unsafe: true,
+          unsafe_comps: true,
+          warnings: false
+        }
+      }),
+      filesize()
+    ]
+  }
+]

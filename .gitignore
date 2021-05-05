@@ -1,21 +1,7 @@
-.DS_Store
 node_modules
-coverage
-# local env files
-.env.local
-.env.*.local
+dist
+lib
+es
+types
+yarn.lock
 
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn.*
-
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-*.rar

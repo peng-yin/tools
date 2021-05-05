@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "browsers": ["ie >= 11"]
+        },
+        "exclude": ["transform-async-to-generator", "transform-regenerator"], // 强制不启用的 plugins
+        "modules": false, // 是否转译module syntax，默认是 commonjs
+        "loose": true // 是否允许生成更简单es5的代码，但可能不那么完全符合ES6语义
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    "lodash"
+  ]
+}

@@ -10,6 +10,7 @@
     "lint": "eslint --ext ts src",
     "check-types": "tsc --noEmit",
     "build": "rollup -c",
+    "prepublishOnly": "npm run clean && npm run check-types && npm run lint",
     "pretest": "npm run build"
   },
   "keywords": [

@@ -1,6 +1,6 @@
 {
   "name": "@pengyin/tools",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "author": "yinpeng <674891229@qq.com>",
   "description": "Tool library based on typscript",
   "license": "MIT",
@@ -8,8 +8,9 @@
     "clean": "rimraf lib dist es types",
     "format": "prettier --write \"{src}/**/*.{ts}\"",
     "lint": "eslint --ext ts src",
-    "build": "npm run clean && rollup -c",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "build": "rollup -c",
+    "pretest": "npm run build"
   },
   "keywords": [
     "typescript",
@@ -32,6 +33,7 @@
   "bugs": "https://github.com/peng-yin/tools/issues",
   "dependencies": {
     "@babel/runtime": "^7.14.0",
+    "@pengyin/tools": "^1.0.5",
     "redux": "^4.1.0"
   },
   "devDependencies": {

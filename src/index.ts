@@ -1,6 +1,9 @@
+// @ts-ignore
+import { isEmail } from './utils.ts';
 
-// 邮箱
-export const isEmail = (s: string) => /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(s);
+export {
+  isEmail
+}
 
 // 手机号码
 export const isMobile = (s: string) => /^1[0-9]{10}$/.test(s);

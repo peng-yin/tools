@@ -14,21 +14,13 @@ const srcFiles = fs.readdirSync('./src/');
 // const projectDir = path.resolve(process.cwd(), 'src');
 
 if (!srcFiles) {
-    throw new Error('src目录为空');
+  throw new Error('src目录为空');
 }
 
 /**
  * code-splitting
+ * const inputFiles = srcFiles.map(dir => path.resolve(projectDir, dir));
  */
-
-// const inputFiles = srcFiles.map(dir => path.resolve(projectDir, dir));
-
-// if (Array.isArray(srcFiles)) {
-//   const isTsFile = srcFiles.every(dirName => /.+\.ts/.test(dirName));
-//   if (!isTsFile) {
-//     throw new Error('src目录文件必须为ts');
-//   }
-// }
 
 const globals = {
   'lodash/chunk': 'lodash'

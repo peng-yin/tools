@@ -18,3 +18,7 @@ async function asyncFunctionWithThrow() {
   if (!user) throw new Error('User not found');
 }
 ```
+
+todo
+1. 文档
+2. jest

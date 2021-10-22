@@ -1,10 +1,26 @@
-# tools
+<div align="center">
+<h1>tools-ts <sup><sup><sub>v1</sub></sup></sup></h1>
+Tool library based on typescript.
 
-🔧 基于rollup、typescript的工具库
+![](https://img.shields.io/npm/v/@pengyin/tools)
+![](https://img.shields.io/github/license/peng-yin/tools)
+![](https://img.shields.io/npm/types/@pengyin/tools)
+![](https://img.shields.io/bundlephobia/min/@pengyin/tools)
 
-> to
+</div>
+## Install
+
+```sh
+yarn add @pengyin/tools
+
+# npm install @pengyin/tools
+```
+
+## Usage
 
 ```ts
+import { to  } from "@pengyin/tools";
+
 interface ServerResponse {
   test: number;
 }
@@ -17,8 +33,16 @@ async function asyncFunctionWithThrow() {
   const [err, user] = await to(UserModel.findById(1));
   if (!user) throw new Error('User not found');
 }
+
 ```
 
-todo
-1. 文档
-2. jest
+## feature
+- docs
+- jest
+
+## License
+
+[MIT License](https://github.com/peng-yin/tools/blob/main/LICENSE)
+
+
+
